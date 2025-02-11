@@ -8,7 +8,7 @@ Nous allons commencer par démarrer la VM `ubuntu` depuis le répertoire `atelie
 vagrant up ubuntu
 ```
 
-Connectons nous maintenant à la VM.
+Connectons-nous maintenant à la VM.
 
 ```sh 
 vagrant ssh ubuntu
@@ -37,7 +37,7 @@ Vérifions la version du paquet précédemment installé.
 ```sh
 ansible --version
 ```
-Voici le résultat de la commande ci-dessus :
+> (r) Voici le résultat de la commande ci-dessus :
 
 ```sh
 vagrant@ubuntu:~$ ansible --version
@@ -45,7 +45,7 @@ ansible 2.10.8
   config file = None
 ```
 
-Déconnectons nous de la machine virtuelle.
+Déconnectons-nous de la machine virtuelle.
 
 ```sh
 exit
@@ -64,7 +64,7 @@ Nous allons commencer par démarrer la VM `ubuntu` depuis le répertoire `atelie
 ```sh
 vagrant up ubuntu
 ```
-Connectons nous maintenant à la VM.
+Connectons-nous maintenant à la VM.
 
 ```sh
 vagrant ssh ubuntu
@@ -94,7 +94,7 @@ Vérifions la version du paquet installé.
 ansible --version
 ```
 
-Voici le résultat de la commande ci-dessus :
+> (r) Voici le résultat de la commande ci-dessus :
 
 ```
 vagrant@ubuntu:~$ ansible --version
@@ -103,7 +103,7 @@ ansible [core 2.17.8]
 ```
 La version d'Ansible installée avec le dépôt PPA est plus récente que celle du dépôt de base.
 
-Déconnectons nous de la machine virtuelle.
+Déconnectons-nous de la machine virtuelle.
 
 ```sh
 exit
@@ -123,7 +123,7 @@ Nous allons commencer par démarrer la VM `rocky` depuis le répertoire `atelier
 vagrant up rocky
 ```
 
-Connectons nous maintenant à la VM.
+Connectons-nous maintenant à la VM.
 
 ```sh
 vagrant ssh rocky
@@ -171,7 +171,7 @@ Vérifions la version de `ansible`.
 ansible --version
 ```
 
-Voici le résultat de la commande ci-dessus :
+> (r) Voici le résultat de la commande ci-dessus :
 
 ```
 (ansible) [vagrant@rocky ~]$ ansible --version
@@ -179,7 +179,7 @@ ansible [core 2.15.13]
   config file = None
 ```
 
-Déconnectons nous de la machine virtuelle.
+Déconnectons-nous de la machine virtuelle.
 
 ```sh
 exit
