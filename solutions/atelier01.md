@@ -37,7 +37,7 @@ Vérifions la version du paquet précédemment installé.
 ```sh
 ansible --version
 ```
-> (r) Voici le résultat de la commande ci-dessus :
+> Voici le résultat de la commande ci-dessus :
 
 ```sh
 vagrant@ubuntu:~$ ansible --version
@@ -94,7 +94,7 @@ Vérifions la version du paquet installé.
 ansible --version
 ```
 
-> (r) Voici le résultat de la commande ci-dessus :
+> Voici le résultat de la commande ci-dessus :
 
 ```
 vagrant@ubuntu:~$ ansible --version
@@ -171,7 +171,7 @@ Vérifions la version de `ansible`.
 ansible --version
 ```
 
-> (r) Voici le résultat de la commande ci-dessus :
+> Voici le résultat de la commande ci-dessus :
 
 ```
 (ansible) [vagrant@rocky ~]$ ansible --version
