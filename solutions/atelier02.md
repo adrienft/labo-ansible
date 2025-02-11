@@ -55,13 +55,13 @@ ssh-copy-id vagrant@target02
 ssh-copy-id vagrant@target03
 ```
 
-Nous pouvons à présent tester notre configurations !
+Nous pouvons à présent tester nos configurations :
 
 ```sh
 ansible all -i target01,target02,target03 -u vagrant -m ping
 ```
 
-> Voici le résultat de la commande ci-dessous :
+> Voici le résultat de la commande ci-dessus :
 
 ```sh
 vagrant@control:~$ ansible all -i target01,target02,target03 -u vagrant -m ping
