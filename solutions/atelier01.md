@@ -117,49 +117,61 @@ vagrant destroy -f ubuntu
 
 ## Exercice 3
 
+Nous allons commencer par démarrer la VM `rocky` depuis le répertoire `atelier-01`.
+
 ```sh
 vagrant up rocky
-```  
+```
+
+Connectons nous maintenant à la VM.
 
 ```sh
 vagrant ssh rocky
 ```
 
+Installons un nouveau dépot, nommé `epel-release`.
+
 ```sh
-sudo dnf install -y epel-release 
+sudo dnf install -y epel-release
 ```
+
+Installons maintenant Python3.
 
 ```sh
 sudo dnf install -y python3-pip
 ```
 
+Créons un environnement virtuel nommé `ansible`.
+
 ```sh
-python3 -m venv ~/.venv/ansible 
+python3 -m venv ~/.venv/ansible
 ```
+
+Démarrons l'environnement virtuel.
 
 ```sh
 source ~/.venv/ansible/bin/activate
 ```
 
-```sh
-pip install --upgrade pip
-```
-
-```sh
-pip install ansible
-```
+Mettons à jour `pip`.
 
 ```sh
 pip install --upgrade pip
 ```
 
+Installations à présent `ansible` avec `pip` (Python).
+
 ```sh
 pip install ansible
 ```
+
+Vérifions la version de `ansible`.
 
 ```sh
 ansible --version
 ```
+
+Voici le résultat de la commande ci-dessus :
 
 ```
 (ansible) [vagrant@rocky ~]$ ansible --version
@@ -167,10 +179,13 @@ ansible [core 2.15.13]
   config file = None
 ```
 
+Déconnectons nous de la machine virtuelle.
+
 ```sh
 exit
 ```
+Détruisons à présent la VM.
 
 ```sh
-vagrant destroy -f ubuntu
+vagrant destroy -f rocky
 ```
