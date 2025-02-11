@@ -35,7 +35,7 @@ sudo vi /etc/hosts
 192.168.56.40  target03.sandbox.lan    target03
 ```
 
-Collectons les clés SSH publiques des hôtes cibles.
+Collectons les clés SSH publiques des hôtes cibles (depuis le contrôleur).
 
 ```sh
 ssh-keyscan -t rsa rocky debian suse >> .ssh/known_hosts
@@ -47,7 +47,7 @@ Générons une clé SSH sur le contrôleur.
 ssh-keygen
 ```
 
-Enfin, nous allons distribuer notre clé publique au différent hôtes cibles.
+Enfin, nous allons distribuer notre clé publique aux différents hôtes cibles.
 
 ```sh
 ssh-copy-id vagrant@target01
@@ -55,7 +55,7 @@ ssh-copy-id vagrant@target02
 ssh-copy-id vagrant@target03
 ```
 
-Nous pouvons à présent tester nos configurations :
+Nous pouvons à présent tester notre configuration :
 
 ```sh
 ansible all -i target01,target02,target03 -u vagrant -m ping
