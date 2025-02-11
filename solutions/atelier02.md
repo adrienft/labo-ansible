@@ -61,7 +61,7 @@ Nous pouvons à présent tester notre configurations !
 ansible all -i target01,target02,target03 -u vagrant -m ping
 ```
 
-Voici le résultat de la commande ci-dessous :
+> Voici le résultat de la commande ci-dessous :
 
 ```sh
 vagrant@control:~$ ansible all -i target01,target02,target03 -u vagrant -m ping
