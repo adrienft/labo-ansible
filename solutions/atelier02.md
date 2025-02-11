@@ -20,7 +20,7 @@ Ansible est déjà installé sur la machine.
 type ansible
 ```
 
-Nous allons à présent modifier le fichier `/etc/hosts` en associant des noms d'hôtes à des adresses IP.
+Nous allons à présent modifier le fichier `/etc/hosts` en associant les adresses IP cibles à des noms d'hôtes.
 
 ```sh
 sudo vi /etc/hosts
@@ -35,7 +35,7 @@ sudo vi /etc/hosts
 192.168.56.40  target03.sandbox.lan    target03
 ```
 
-Collectons les clés SSH publiques des hôtes cibles (depuis le contrôleur).
+Collectons les clés SSH publiques des hôtes cibles.
 
 ```sh
 ssh-keyscan -t rsa rocky debian suse >> .ssh/known_hosts
