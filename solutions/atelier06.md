@@ -49,6 +49,7 @@ ssh-copy-id vagrant@target01
 ssh-copy-id vagrant@target02
 ssh-copy-id vagrant@target03
 ```
+
 Installons maintenant Ansible de façon simple en utilisant les dépots de Ubuntu.
 Il s'agit par contre d'une ancienne version (sans incidence pour cet exercice).
 
@@ -135,13 +136,6 @@ Nous pouvons maintenant tester la journalisation.
 
 ```sh
 ansible all -i target01,target02,target03 -u vagrant -m ping> Voici le contenu à intégrer dans le fichier précedent : 
-
-```sh
-[defaults]
-inventory = ./hosts
-log_path = ./ansible.log
-```
-
 cat ~/journal/ansible.log
 ```
 
@@ -197,6 +191,7 @@ Testons notre configuration.
 ```sh
 ansible all -m ping
 ```
+
 > Voici le résultat obtenu :
 
 ```sh
