@@ -14,13 +14,13 @@ Connectons-nous maintenant au contrôleur.
 vagrant ssh ansible
 ```
 
-Nous allons installer successivement les paquets `tree`, `git` et `nmap` sur toutes les cibles.
+Nous allons installer les paquets `tree`, `git` et `nmap` sur toutes les hôtes cibles.
 
 ```sh
 ansible all -m package -a "name=tree,git,nmap"
 ```
 
-> Voici le résultat de la commande précédente :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 [vagrant@ansible ema]$ ansible all -m package -a "name=tree,git,nmap"
@@ -33,9 +33,10 @@ rocky | CHANGED => {
         "Installed: perl-Error-1:0.17029-7.el9.noarch",
         "Installed: nmap-ncat-3:7.92-3.el9.x86_64",
         "Installed: nmap-3:7.92-3.el9.x86_64",
+[...]
 ```
 
-Lorsqu'on execute à nouveau, nous obtenons le résultat `"changed": false`.
+En exécutant à nouveau la commande, nous obtenons la réponse suivante :`"changed": false`. Il s'agit d'un comportement normal puisque les paquets ont déjà été installés.
 
 ```sh
 [vagrant@ansible ema]$ ansible all -m package -a "name=tree,git,nmap"
@@ -50,14 +51,16 @@ suse | SUCCESS => {
     "state": "present",
     "update_cache": false
 }
+[...]
 ```
+
 Nous allons maintenant désinstaller les paquets précédemment installés.
 
 ```sh
 ansible all -m package -a "name=tree,git,nmap state=absent"
 ```
 
-> Voici le résultat de la commande précédente :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 [vagrant@ansible ema]$ ansible all -m package -a "name=tree,git,nmap state=absent"
@@ -66,9 +69,10 @@ suse | CHANGED => {
     "cmd": [
         "/usr/bin/zypper",
         "--quiet",
+[...]
 ```
 
-Lorsqu'on execute à nouveau la commande, nous obtenons le résultat `"changed": false`.
+En exécutant à nouveau la commande, nous obtenons la réponse suivante :`"changed": false`. Il s'agit d'un comportement normal puisque les paquets ont déjà été installés.
 
 ```sh
 [vagrant@ansible ema]$ ansible all -m package -a "name=tree,git,nmap state=absent"
@@ -86,15 +90,16 @@ suse | SUCCESS => {
     "state": "absent",
     "update_cache": false
 }
+[...]
 ```
 
-Copions le fichier `/etc/fastab` du contrôleur vers toutes les hôtes cibles sous forme d'un fichier `/tmp/test3.txt`.
+Copions le fichier `/etc/fstab` du contrôleur vers le fichier `/tmp/test3.txt` de toutes les machines cibles.
 
 ```sh
 ansible all -m copy -a "src=/etc/fstab dest=/tmp/test3.txt"
 ```
 
-> Voici le résultat de la commande précédente :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 [vagrant@ansible ema]$ ansible all -m copy -a "src=/etc/fstab dest=/tmp/test3.txt"
@@ -113,9 +118,10 @@ rocky | CHANGED => {
     "state": "file",
     "uid": 0
 }
+[...]
 ```
 
-Lorsqu'on execute à nouveau la commande, nous obtenons le résultat `"changed": false`. En effet, les configurations ont déjà été appliquées.
+En exécutant à nouveau la commande, nous obtenons la réponse suivante :`"changed": false`. Il s'agit d'un comportement normal puisque les configurations ont déjà été effectuées.
 
 ```sh
 [vagrant@ansible ema]$ ansible all -m copy -a "src=/etc/fstab dest=/tmp/test3.txt"
@@ -132,6 +138,7 @@ debian | SUCCESS => {
     "state": "file",
     "uid": 0
 }
+[...]
 ```
 
 Supprimons à présent le fichier `/tmp/test3.txt`.
@@ -140,7 +147,7 @@ Supprimons à présent le fichier `/tmp/test3.txt`.
 ansible all -m file -a "path=/tmp/test3.txt state=absent"
 ```
 
-> Voici le résultat de la commande précédente :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 [vagrant@ansible ema]$ ansible all -m file -a "path=/tmp/test3.txt state=absent"
@@ -161,7 +168,7 @@ suse | CHANGED => {
 }
 ```
 
-Lorsqu'on execute à nouveau la commande, nous obtenons le résultat `"changed": false`. En effet, les suppressions ont déjà été appliquées.
+En exécutant à nouveau la commande, nous obtenons la réponse suivante :`"changed": false`. Il s'agit d'un comportement normal puisque les configurations ont déjà été appliquées.
 
 ```sh
 debian | SUCCESS => {
@@ -181,13 +188,13 @@ suse | SUCCESS => {
 }
 ```
 
-Enfin, nous allons terminer par afficher l'espace utilisé par la partition principale sur tous les Target Hosts.
+Nous allons terminer par afficher l'espace utilisé par la partition principale de chaque Target Host.
 
 ```sh
 ansible all -m command -a "df -h /"
 ```
 
-> Voici le résultat de la commande précédente :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 debian | CHANGED | rc=0 >>

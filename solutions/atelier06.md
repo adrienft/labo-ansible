@@ -14,13 +14,13 @@ Connectons-nous maintenant au contrôleur.
 vagrant ssh control
 ```
 
-Nous allons modifier le fichier `/etc/hosts` en associant les adresses IP cibles à des noms d'hôtes.
+Nous allons ensuite modifier le fichier `/etc/hosts` en associant les adresses IP des machines cibles à leurs noms d'hôtes.
 
 ```sh
 sudo nano /etc/hosts
 ```
 
-> Voici donc les lignes à ajouter au fichier :
+> Retrouvez ci-dessous les lignes à ajouter au fichier :
 
 ```sh
 192.168.56.10  control.sandbox.lan     control
@@ -35,14 +35,14 @@ Collectons les clés SSH publiques des hôtes cibles.
 ssh-keyscan -t rsa target01 target02 target03 >> .ssh/known_hosts
 ```
 
-Générons une clé SSH sur le contrôleur.
+Générons maintenant une clé SSH sur le contrôleur.
 
 ```sh
 ssh-keygen
 ```
 
 Enfin, nous allons distribuer notre clé publique aux différents hôtes cibles.
-Le mot de passe des machines virtuelles est `vagrant`.
+Le mot de passe par défaut des machines virtuelles est `vagrant`.
 
 ```sh
 ssh-copy-id vagrant@target01
@@ -50,21 +50,21 @@ ssh-copy-id vagrant@target02
 ssh-copy-id vagrant@target03
 ```
 
-Installons maintenant Ansible de façon simple en utilisant les dépots de Ubuntu.
-Il s'agit par contre d'une ancienne version (sans incidence pour cet exercice).
+Installons Ansible en utilisant les dépots d'Ubuntu.
+Notons toutefois qu'il s'agira d'une ancienne version (sans incidence pour cet exercice).
 
 ```sh
 sudo apt update
 sudo apt install ansible -y
 ```
 
-Nous pouvons à présent tester notre configuration précédente.
+Nous pouvons à présent tester notre configuration.
 
 ```sh
 ansible all -i target01,target02,target03 -u vagrant -m ping
 ```
 
-> Voici le résultat de la commande ci-dessus :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
  vagrant@control:~$ ansible all -i target01,target02,target03 -u vagrant -m ping
@@ -91,26 +91,26 @@ target01 | SUCCESS => {
 }
 ```
 
-Nous allons créer un répertoire de projet nommé `monprojet`.
+Nous allons créer un répertoire de travail pour notre projet Ansible.
 
 ```sh
 mkdir ~/monprojet
 ```
 
-puis créer un fichier `ansible.cfg` dans ce même dossier. 
+puis créer un fichier `ansible.cfg` dans ce même répertoire. 
 
 ```sh
 touch ~/monprojet/ansible.cfg
 ```
 
-Vérifions que le fichier ait bien été pris en compte par Ansible.
+Vérifions maintenant que le fichier a bien été pris en compte par Ansible.
 
 ```sh
 cd  ~/monprojet/
 ansible --version | head -n 2
 ```
 
-> Voici le résultat de la commande ci-dessus :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 vagrant@control:~/monprojet$ ansible --version | head -n 2
@@ -124,7 +124,7 @@ Modifions le fichier `ansible.cfg` pour y intégrer un fichier d'inventaire.
 nano  ansible.cfg
 ```
 
-> Voici le contenu à intégrer dans le fichier précedent : 
+> Retrouvez ci-dessous les lignes à ajouter au fichier :
 
 ```sh
 [defaults]
@@ -132,14 +132,14 @@ inventory = ./hosts
 log_path = ~/journal/ansible.log
 ```
 
-Nous pouvons maintenant tester la journalisation. 
+Nous pouvons maintenant tester la journalisation.
 
 ```sh
-ansible all -i target01,target02,target03 -u vagrant -m ping> Voici le contenu à intégrer dans le fichier précedent : 
+ansible all -i target01,target02,target03 -u vagrant -m ping
 cat ~/journal/ansible.log
 ```
 
-> Voici le résultat obtenu : 
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh 
 vagrant@control:~/monprojet$ cat ~/journal/ansible.log 
@@ -166,14 +166,14 @@ vagrant@control:~/monprojet$ cat ~/journal/ansible.log
 }
 ```
 
-Nous allons à présent créer notre fichier d'inventaire et créer un groupe `[testlab]` en y intégrant nos trois cibles.
-Profitons en pour définir explicitement l'utilisateur `vagrant` pour la connexion aux cibles et l'élévation de privilèges.
+Nous allons à présent créer notre fichier d'inventaire et créer un groupe `[testlab]` en y intégrant nos trois machines cibles.
+Profitons-en pour définir explicitement l'utilisateur `vagrant` et l'élévation de privilèges.
 
 ```sh
 nano hosts
 ```
 
-> Voici les lignes à ajouter dans le fichier `hosts` : 
+> Retrouvez ci-dessous les lignes à ajouter au fichier :  :
 
 ```sh
 [testlab]
@@ -192,7 +192,7 @@ Testons notre configuration.
 ansible all -m ping
 ```
 
-> Voici le résultat obtenu :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 vagrant@control:~/monprojet$ ansible  all -m ping
@@ -219,13 +219,13 @@ target03 | SUCCESS => {
 }
 ```
 
-Nous allons à présent afficher la première ligne du fichier `/etc/shadow` sur tous les hôtes cibles.
+Nous allons afficher la première ligne du fichier `/etc/shadow` de tous les hôtes cibles.
 
 ```sh
 ansible all -a "head -n 1 /etc/shadow"
 ```
 
-> Voici le résultat obtenu :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 vagrant@control:~/monprojet$ ansible all -a "head -n 1 /etc/shadow"
@@ -242,4 +242,5 @@ Faisons un peu de nettoyage.
 
 ```sh
 exit 
-vagrant destroy -f```
+vagrant destroy -f
+```
