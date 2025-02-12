@@ -166,8 +166,8 @@ vagrant@control:~/monprojet$ cat ~/journal/ansible.log
 }
 ```
 
-Nous allons à présent créer notre fichier d'inventaire en créer un groupe `[testlab]` et en y intégrant nos trois cibles.
-Profitons en pour définir explicitement l'utilisateur `vagrant` pour la connexion aux cibles ainsi que l'élévation de privilèges.
+Nous allons à présent créer notre fichier d'inventaire et créer un groupe `[testlab]` en y intégrant nos trois cibles.
+Profitons en pour définir explicitement l'utilisateur `vagrant` pour la connexion aux cibles et l'élévation de privilèges.
 
 ```sh
 nano hosts
