@@ -50,7 +50,7 @@ ssh-copy-id vagrant@target02
 ssh-copy-id vagrant@target03
 ```
 
-Installons Ansible en utilisant les dépots d'Ubuntu.
+Installons Ansible en utilisant les dépôts d'Ubuntu.
 Notons toutefois qu'il s'agira d'une ancienne version (sans incidence pour cet exercice).
 
 ```sh
@@ -67,7 +67,7 @@ ansible all -i target01,target02,target03 -u vagrant -m ping
 > Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
- vagrant@control:~$ ansible all -i target01,target02,target03 -u vagrant -m ping
+vagrant@control:~$ ansible all -i target01,target02,target03 -u vagrant -m ping
 target02 | SUCCESS => {
     "ansible_facts": {
         "discovered_interpreter_python": "/usr/bin/python3"

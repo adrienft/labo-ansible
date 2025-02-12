@@ -1,4 +1,4 @@
-# atelier02
+# atelier03
 
 ## Exercice
 
@@ -20,13 +20,13 @@ Ansible est déjà installé sur la machine.
 type ansible
 ```
 
-Nous allons à présent modifier le fichier `/etc/hosts` en associant les adresses IP cibles à des noms d'hôtes.
+Nous allons à présent modifier le fichier `/etc/hosts` en associant les adresses IP des machines cibles à leurs noms d'hôtes.
 
 ```sh
 sudo vi /etc/hosts
 ```
 
-> Voici donc les lignes à ajouter au fichier :
+> Retrouvez ci-dessous les lignes à ajouter au fichier :
 
 ```sh
 192.168.56.10  control.sandbox.lan     control
@@ -38,16 +38,17 @@ sudo vi /etc/hosts
 Collectons les clés SSH publiques des hôtes cibles.
 
 ```sh
-ssh-keyscan -t rsa rocky debian suse >> .ssh/known_hosts
+ssh-keyscan -t rsa target01 target02 target03 >> .ssh/known_hosts
 ```
 
-Générons une clé SSH sur le contrôleur.
+Générons maintenant une clé SSH sur le contrôleur.
 
 ```sh
 ssh-keygen
 ```
 
 Enfin, nous allons distribuer notre clé publique aux différents hôtes cibles.
+Le mot de passe par défaut des machines virtuelles est `vagrant`.
 
 ```sh
 ssh-copy-id vagrant@target01
@@ -55,13 +56,13 @@ ssh-copy-id vagrant@target02
 ssh-copy-id vagrant@target03
 ```
 
-Nous pouvons à présent tester notre configuration :
+Nous pouvons à présent tester notre configuration.
 
 ```sh
 ansible all -i target01,target02,target03 -u vagrant -m ping
 ```
 
-> Voici le résultat de la commande ci-dessus :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 vagrant@control:~$ ansible all -i target01,target02,target03 -u vagrant -m ping

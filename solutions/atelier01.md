@@ -8,13 +8,13 @@ Nous allons commencer par démarrer la VM `ubuntu` depuis le répertoire `atelie
 vagrant up ubuntu
 ```
 
-Connectons-nous maintenant à la VM.
+Connectons-nous à la machine virtuelle.
 
 ```sh 
 vagrant ssh ubuntu
 ```
 
-Rafraichissons les informations sur les paquets.
+Rafraichissons maintenant les informations sur les paquets.
 
 ```sh
 sudo apt update
@@ -32,12 +32,13 @@ Passons à l'installation du paquet `ansible`.
 sudo apt install -y ansible 
 ```
 
-Vérifions la version du paquet précédemment installé.
+Une fois Ansible installé, nous pouvons vérifier sa version.
 
 ```sh
 ansible --version
 ```
-> Voici le résultat de la commande ci-dessus :
+
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
 vagrant@ubuntu:~$ ansible --version
@@ -45,15 +46,10 @@ ansible 2.10.8
   config file = None
 ```
 
-Déconnectons-nous de la machine virtuelle.
+Déconnectons-nous et détruisons la machine virtuelle.
 
 ```sh
 exit
-```
-
-Détruisons à présent la VM. 
-
-```sh
 vagrant destroy -f ubuntu
 ```
 
@@ -64,37 +60,37 @@ Nous allons commencer par démarrer la VM `ubuntu` depuis le répertoire `atelie
 ```sh
 vagrant up ubuntu
 ```
-Connectons-nous maintenant à la VM.
+Connectons-nous à la machine virtuelle.
 
 ```sh
 vagrant ssh ubuntu
 ```
 
-Rafraichissons les informations sur les paquets.
+Rafraichissons maintenant les informations sur les paquets.
 
 ```sh
 sudo apt update
 ```
 
-et ajoutons un nouveau dépot.
+...et ajoutons un nouveau dépôt.
 
 ```sh
 sudo apt-add-repository ppa:ansible/ansible
 ```
 
-Installons le paquet `ansible`.
+Installons à présent le paquet `ansible`.
 
 ```sh
 sudo apt install -y ansible
 ```
 
-Vérifions la version du paquet installé.
+Une fois Ansible installé, nous pouvons vérifier sa version.
 
 ```sh
 ansible --version
 ```
 
-> Voici le résultat de la commande ci-dessus :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```
 vagrant@ubuntu:~$ ansible --version
@@ -103,15 +99,10 @@ ansible [core 2.17.8]
 ```
 La version d'Ansible installée avec le dépôt PPA est plus récente que celle du dépôt de base.
 
-Déconnectons-nous de la machine virtuelle.
+Déconnectons-nous et détruisons la machine virtuelle.
 
 ```sh
 exit
-```
-
-Détruisons à présent la VM.
-
-```sh
 vagrant destroy -f ubuntu
 ```
 
@@ -123,25 +114,25 @@ Nous allons commencer par démarrer la VM `rocky` depuis le répertoire `atelier
 vagrant up rocky
 ```
 
-Connectons-nous maintenant à la VM.
+Connectons-nous à la machine virtuelle.
 
 ```sh
 vagrant ssh rocky
 ```
 
-Installons un nouveau dépot, nommé `epel-release`.
+Installons un nouveau dépôt, nommé `epel-release`.
 
 ```sh
 sudo dnf install -y epel-release
 ```
 
-Installons maintenant Python3.
+Passons à l'installation de `python3`.
 
 ```sh
 sudo dnf install -y python3-pip
 ```
 
-Créons un environnement virtuel nommé `ansible`.
+Une fois l'installation terminée, nous pouvons créer un environnement virtuel nommé `ansible`.
 
 ```sh
 python3 -m venv ~/.venv/ansible
@@ -153,25 +144,25 @@ Démarrons l'environnement virtuel.
 source ~/.venv/ansible/bin/activate
 ```
 
-Mettons à jour `pip`.
+Mettons à jour le gestionnaire de paquets `pip`.
 
 ```sh
 pip install --upgrade pip
 ```
 
-Installations à présent `ansible` avec `pip` (Python).
+Nous allons à présent installer `ansible` avec le gestionnaire de paquets Python.
 
 ```sh
 pip install ansible
 ```
 
-Vérifions la version de `ansible`.
+Vérifions la version de Ansible.
 
 ```sh
 ansible --version
 ```
 
-> Voici le résultat de la commande ci-dessus :
+> Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```
 (ansible) [vagrant@rocky ~]$ ansible --version
@@ -179,13 +170,9 @@ ansible [core 2.15.13]
   config file = None
 ```
 
-Déconnectons-nous de la machine virtuelle.
+Déconnectons-nous et détruisons la machine virtuelle.
 
 ```sh
 exit
-```
-Détruisons à présent la VM.
-
-```sh
 vagrant destroy -f rocky
 ```
