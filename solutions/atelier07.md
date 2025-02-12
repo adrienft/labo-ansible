@@ -205,4 +205,5 @@ L'atelier est maintenant terminé. Faisons un peu de nettoyage.
 
 ```sh
 exit 
-vagrant destroy -f```
+vagrant destroy -f
+```
