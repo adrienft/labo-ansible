@@ -171,6 +171,7 @@ suse | CHANGED => {
 En exécutant à nouveau la commande, nous obtenons la réponse suivante :`"changed": false`. Il s'agit d'un comportement normal puisque les configurations ont déjà été appliquées.
 
 ```sh
+[vagrant@ansible ema]$ ansible all -m file -a "path=/tmp/test3.txt state=absent"
 debian | SUCCESS => {
     "changed": false,
     "path": "/tmp/test3.txt",
@@ -197,6 +198,7 @@ ansible all -m command -a "df -h /"
 > Retrouvez le résultat de la commande précédente ci-dessous :
 
 ```sh
+[vagrant@ansible ema]$ ansible all -m command -a "df -h /"
 debian | CHANGED | rc=0 >>
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda3       124G  2.3G  115G   2% /
