@@ -210,6 +210,9 @@ Filesystem                  Size  Used Avail Use% Mounted on
 /dev/mapper/rl_rocky9-root   70G  2.4G   68G   4% /
 ```
 
+Nous remarquons dans l'exemple ci-haut que le résultat de la commande reste orange malgré plusieurs exécutions.  
+Cela s'explique par le fait que le module `command` n'est pas idempotent par défaut. 
+
 L'atelier est maintenant terminé. Faisons un peu de nettoyage.
 
 ```sh
