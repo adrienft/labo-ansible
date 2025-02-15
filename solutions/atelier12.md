@@ -157,7 +157,7 @@ target02                   : ok=4    changed=0    unreachable=0    failed=0    s
 target03                   : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-L'idempotence de notre playbook fonctionne correctement.
+L'idempotence de notre playbook est assurée.
 
 L'atelier est maintenant terminé. Nettoyons notre espace de travail.
 
