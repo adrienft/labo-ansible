@@ -26,7 +26,7 @@ Nous allons écrire un premier playbook `apache-debian.yml` qui installera Apach
 Le dossier `playbooks` a été créé en amont.
 
 ```sh
-nano playbooks/apache-debian-yml
+nano playbooks/apache-debian.yml
 ```
 
 > Retrouvez ci-dessous le contenu du fichier :
@@ -81,7 +81,7 @@ yamllint apache-debian.yml
 L'heure est arrivée... il est temps d'exécuter notre livre d'instructions.
 
 ```sh
-ansible-playbook apache-debian-yml
+ansible-playbook apache-debian.yml
 ```
 
 > Retrouvez le résultat de la commande précédente ci-dessous :
@@ -235,7 +235,7 @@ curl rocky
 Nous allons maintenant écrire un dernier playbook `apache-suse.yml` qui installera Apache sur l'hôte `suse`.
 
 ```sh
-nano playbooks/apache-suse-yml
+nano playbooks/apache-suse.yml
 ```
 
 > Retrouvez ci-dessous le contenu du fichier :
