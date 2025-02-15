@@ -6,3 +6,4 @@
 - [Configuration de base](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier06.md)
 - [Idempotence](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier07.md)
 - [Un serveur web simple](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier10.md)
+- [Handler](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier12.md)
