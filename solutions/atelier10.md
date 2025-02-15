@@ -277,7 +277,7 @@ nano playbooks/apache-suse-yml
 ...
 ```
 
-Testons la syntaxe de notre nouveau playbook grâce à la commande `yamllint apache-suse.yml`.
+Testons la syntaxe de notre nouveau playbook grâce à la commande `yamllint apache-suse.yml`.  
 Si tout est bon, aucune réponse n'est attendue.
 
 Exécutons notre livre d'instructions.
