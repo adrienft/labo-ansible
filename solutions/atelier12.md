@@ -122,7 +122,7 @@ target02                   : ok=5    changed=4    unreachable=0    failed=0    s
 target03                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Nous allons maintenant vérifier l'idempotence de notre fichier en le réexecutant. Toutes les tâches devraient être au vert.
+Nous allons maintenant vérifier l'idempotence de notre fichier en le réexecutant. Toutes les tâches devraient être au vert (`changed=0`).
 
 > Retrouvez le résultat de la commande précédente ci-dessous :
 
