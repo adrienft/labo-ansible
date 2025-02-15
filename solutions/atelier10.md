@@ -22,7 +22,7 @@ Rendons-nous dans le répertoire du projet.
 cd ansible/projets/ema/
 ```
 
-Nous allons écrire un premier playbook `apache-debian.yml` qui installe Apache sur l'hôte `debian`.
+Nous allons écrire un premier playbook `apache-debian.yml` qui installera Apache sur l'hôte `debian`.
 Le dossier `playbooks` a été créé en amont.
 
 ```sh
@@ -72,7 +72,7 @@ nano playbooks/apache-debian-yml
 ...
 ```
 
-Testons la syntaxe de notre playbook à l'aide de ``yamllint`. Aucune réponse équivaut à aucun problème.
+Testons la syntaxe de notre playbook à l'aide de `yamllint`. Aucune réponse équivaut à aucun problème.
 
 ```sh
 yamllint apache-debian.yml
@@ -126,7 +126,7 @@ Nous pouvons afficher le contenu de la page grâce à la commande `curl debian`.
 </html>
 ```
 
-Écrivons un second playbook nommé `apache-rocky.yml` qui installe Apache sur l'hôte `rocky`.
+Écrivons un second playbook nommé `apache-rocky.yml` qui installera Apache sur l'hôte `rocky`.
 
 ```sh
 nano playbooks/apache-rocky.yml
@@ -232,7 +232,7 @@ curl rocky
 
 ```
 
-Nous allons maintenant écrire un dernier playbook `apache-suse.yml` qui installe Apache sur l'hôte `suse`.
+Nous allons maintenant écrire un dernier playbook `apache-suse.yml` qui installera Apache sur l'hôte `suse`.
 
 ```sh
 nano playbooks/apache-suse-yml
@@ -277,7 +277,8 @@ nano playbooks/apache-suse-yml
 ...
 ```
 
-Testons la syntaxe de notre nouveau playbook grâce à la commande `yamllint apache-suse.yml`. Si tout est bon, aucune réponse n'est attendue.
+Testons la syntaxe de notre nouveau playbook grâce à la commande `yamllint apache-suse.yml`.
+Si tout est bon, aucune réponse n'est attendue.
 
 Exécutons notre livre d'instructions.
 
