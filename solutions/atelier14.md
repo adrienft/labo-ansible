@@ -68,7 +68,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Nous allons à présent remplacer nos variables, l'une et l'autre puis les deux à la fois, en utilisant les *extra vars*.
+Nous allons à présent remplacer nos variables, l'une et l'autre puis les deux à la fois, en utilisant les *extra vars*.  
 Commençons par la voiture de nos rêves.
 
 ```sh
@@ -89,7 +89,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-puis passons à la moto...
+Puis passons à la moto...
 
 ```sh
 ansible-playbook myvars1.yml -e mybike=Honda
@@ -202,7 +202,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Écrivons un nouveau *playbook* fichier qui affichera le contenu des variables `mycar` et `mybike` définies dans le répertoire `group_vars`.
+Écrivons un nouveau *playbook* qui affichera le contenu des variables `mycar` et `mybike` définies dans le répertoire `group_vars`.
 
 ```sh
 nano playbooks/myvars3.yml
@@ -246,7 +246,8 @@ mybike: BMW
 ...
 ```
 
-Testons à présent notre nouveau `playbook` (depuis le répertoire `playbooks`). Les valeurs `VW` et `BMW` sont définies comme valeurs par défaut pour tous les hôtes.
+Testons à présent notre nouveau `playbook` (depuis le répertoire `playbooks`).  
+Les valeurs `VW` et `BMW` sont définies comme valeurs par défaut pour tous les hôtes.
 
 ```sh
 ansible-playbook myvars3.yml
@@ -274,7 +275,7 @@ target02                   : ok=1    changed=0    unreachable=0    failed=0    s
 target03                   : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Nous allons maintenant faire le nécéssaire pour remplacer les valeurs `VW` et `BMW` par `Mercedes` et `Honda` sur l’hôte `target02`.
+Nous allons maintenant faire le nécéssaire pour remplacer les valeurs `VW` et `BMW` par `Mercedes` et `Honda` sur l’hôte `target02`.  
 Pour ce faire, nous devons créer un fichier `target02.yml` dans un nouveau répertoire nommé `host_vars`.
 
 ```sh
@@ -321,7 +322,7 @@ target02                   : ok=1    changed=0    unreachable=0    failed=0    s
 target03                   : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Terminons cet atelier en écrivant un *playbook* qui affichera le nom et le mot de passe d'un utilisateur à l'aide des variables `user` et `password`. Ces variables seront saisies de manière interactive pendant l'exécution du fichier. Nous veillerions également à ce que le mot de passe ne s'affiche pas pendant la saisie.
+Terminons cet atelier en écrivant un *playbook* qui affichera le nom et le mot de passe d'un utilisateur à l'aide des variables `user` et `password`. Ces variables seront saisies de manière interactive pendant l'exécution du fichier. Nous veillerions également à ce que le mot de passe ne s'affiche pas en clair pendant la saisie.
 
 ```sh
 nano playbooks/display_user.yml
