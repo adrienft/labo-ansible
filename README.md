@@ -7,3 +7,4 @@
 - [Idempotence](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier07.md)
 - [Un serveur web simple](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier10.md)
 - [Handler](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier12.md)
+- [Variables](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier14.md)
