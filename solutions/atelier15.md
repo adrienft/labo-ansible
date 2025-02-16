@@ -22,7 +22,8 @@ Rendons-nous dans le répertoire *playbooks* du projet.
 cd ansible/projets/ema/playbooks/
 ```
 
-Nous allons écrire un *playbook* `kernel.yml` qui affichera les informations détaillées du noyau de toutes nos machines cibles. Pour cela, nous utiliserons dans un premier temps le module `debug` et le paramètre `msg`.
+Nous allons écrire un *playbook* `kernel.yml` qui affichera les informations détaillées du noyau de toutes nos cibles.  
+Pour cela, nous utiliserons dans un premier temps le module `debug` et le paramètre `msg`.
 
 ```sh
 nano kernel.yml
