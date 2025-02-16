@@ -22,7 +22,7 @@ Rendons-nous dans le répertoire du projet.
 cd ansible/projets/ema/
 ```
 
-Nous allons écrire un playbook `chrony.yml` qui assurera la synchronisation NTP avec toutes les machines cibles.  
+Nous allons écrire un *playbook* `chrony.yml` qui assurera la synchronisation NTP avec toutes les machines cibles.
 Le dossier `playbooks` a été créé en amont.
 
 ```sh
@@ -73,7 +73,7 @@ nano playbooks/chrony.yml
 ...
 ```
 
-Testons la syntaxe de notre playbook grâce à la commande `yamllint`.  
+Testons la syntaxe de notre *playbook* grâce à la commande `yamllint`.
 Si tout est bon, aucune réponse ne devrait s'afficher.
 
 ```sh
@@ -157,7 +157,7 @@ target02                   : ok=4    changed=0    unreachable=0    failed=0    s
 target03                   : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-L'idempotence de notre playbook est assurée.
+L'idempotence de notre *playbook* est assurée.
 
 L'atelier est maintenant terminé. Nettoyons notre espace de travail.
 

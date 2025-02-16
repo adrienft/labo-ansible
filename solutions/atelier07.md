@@ -189,7 +189,7 @@ suse | SUCCESS => {
 }
 ```
 
-Nous allons terminer par afficher l'espace utilisé par la partition principale de chaque Target Host.
+Nous allons terminer par afficher l'espace utilisé par la partition principale de chaque *Target Host*.
 
 ```sh
 ansible all -m command -a "df -h /"
