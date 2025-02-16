@@ -22,7 +22,7 @@ Rendons-nous dans le répertoire du projet.
 cd ansible/projets/ema/
 ```
 
-Nous allons écrire un premier *playbook* `apache-debian.yml` qui installera Apache sur l'hôte `debian`.
+Nous allons écrire un premier *playbook* `apache-debian.yml` qui installera Apache sur l'hôte `debian`.  
 Le dossier `playbooks` a été créé en amont.
 
 ```sh
@@ -277,7 +277,7 @@ nano playbooks/apache-suse.yml
 ...
 ```
 
-Testons la syntaxe de notre nouveau *playbook* grâce à la commande `yamllint apache-suse.yml`.
+Testons la syntaxe de notre nouveau *playbook* grâce à la commande `yamllint apache-suse.yml`.  
 Si tout est bon, aucune réponse n'est attendue.
 
 Exécutons notre livre d'instructions.

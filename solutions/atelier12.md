@@ -22,7 +22,7 @@ Rendons-nous dans le répertoire du projet.
 cd ansible/projets/ema/
 ```
 
-Nous allons écrire un *playbook* `chrony.yml` qui assurera la synchronisation NTP avec toutes les machines cibles.
+Nous allons écrire un *playbook* `chrony.yml` qui assurera la synchronisation NTP avec toutes les machines cibles.  
 Le dossier `playbooks` a été créé en amont.
 
 ```sh
@@ -73,7 +73,7 @@ nano playbooks/chrony.yml
 ...
 ```
 
-Testons la syntaxe de notre *playbook* grâce à la commande `yamllint`.
+Testons la syntaxe de notre *playbook* grâce à la commande `yamllint`.  
 Si tout est bon, aucune réponse ne devrait s'afficher.
 
 ```sh
