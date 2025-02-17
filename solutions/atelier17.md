@@ -8,7 +8,7 @@ Nous allons commencer par démarrer l'ensemble des machines virtuelles présente
 vagrant up
 ```
 
-Connectons-nous maintenant au *Control Host* (contrôleur en français).
+Connectons-nous maintenant au *Control Host* (ou contrôleur).
 
 ```sh
 vagrant ssh ansible
@@ -291,7 +291,7 @@ nano chrony-02.yml
 ...
 ```
 
-Il nous faut ensuite créer le répertoire `vars` dans le dossier `playbooks`, et définir les fichiers de variables externes (un par distribution).
+Nous devons ensuite créer le répertoire `vars` dans le dossier `playbooks` et y définir les fichiers de variables, un pour chaque distribution.
 
 ```sh
 mkdir vars
@@ -358,7 +358,7 @@ chrony_confdir: /etc/chrony.conf
 ...
 ```
 
-Nous pouvons ensuite exécuter le *playbook* : `ansible-playbook chrony-02.yml`.
+Nous pouvons à présent exécuter le *playbook* : `ansible-playbook chrony-02.yml`.
 
 ```sh
 PLAY [all] *********************************************************************************************************************************************************************************************************************************
@@ -406,7 +406,7 @@ suse                       : ok=5    changed=0    unreachable=0    failed=0    s
 ubuntu                     : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Nous allons tester le bon fonctionnement de notre *handler* en modifiant légèrement la configuration envoyée dans le fichier `/etc/chrony.conf` de chaque cible.
+Nous allons tester le bon fonctionnement de notre *handler* en modifiant légèrement la configuration envoyée à chaque cible.
 
 ```sh
 nano chrony-02.yml
