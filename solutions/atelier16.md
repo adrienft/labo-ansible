@@ -133,7 +133,7 @@ rocky                      : ok=2    changed=0    unreachable=0    failed=0    s
 suse                       : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Nous allons terminer cet atelier en écrivant un fichier nommé `dns-info.yml` qui affichera le(s) serveur(s) DNS utilisé(s) par les *Target Hosts*.
+Nous allons terminer cet atelier en écrivant un fichier `dns-info.yml` qui affichera le(s) serveur(s) DNS utilisé(s) par les *Target Hosts*.
 
 ```sh
 nano dns-info.yml
