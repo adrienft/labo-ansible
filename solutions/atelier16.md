@@ -95,10 +95,12 @@ nano python-info.yml
   tasks:
     - name: Display Python version
       debug:
-        msg: "La version de Python installée est : {{ ansible_facts.python.version }}"
+        msg: "La version de Python installée est : {{ ansible_python_version }}"
 
 ...
 ```
+
+Il est également possible d'utiliser la variable `{{ ansible_facts.python.version }}` en lieu et place de `{{ ansible_python_version }}`. Notez toutefois que la présentation des résultats ne sera pas la même.
 
 Exécutons notre nouveau livre.
 
@@ -118,13 +120,13 @@ ok: [suse]
 
 TASK [Display Python version] **************************************************************************************************************************************************************************************************************
 ok: [rocky] => {
-    "msg": "La version de Python installée est : {'major': 3, 'minor': 9, 'micro': 18, 'releaselevel': 'final', 'serial': 0}"
+    "msg": "La version de Python installée est : 3.9.18"
 }
 ok: [debian] => {
-    "msg": "La version de Python installée est : {'major': 3, 'minor': 11, 'micro': 2, 'releaselevel': 'final', 'serial': 0}"
+    "msg": "La version de Python installée est : 3.11.2"
 }
 ok: [suse] => {
-    "msg": "La version de Python installée est : {'major': 3, 'minor': 6, 'micro': 15, 'releaselevel': 'final', 'serial': 0}"
+    "msg": "La version de Python installée est : 3.6.15"
 }
 
 PLAY RECAP *********************************************************************************************************************************************************************************************************************************
