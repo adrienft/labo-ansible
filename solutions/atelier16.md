@@ -100,7 +100,8 @@ nano python-info.yml
 ...
 ```
 
-Il est également possible d'utiliser la variable `{{ ansible_facts.python.version }}` en lieu et place de `{{ ansible_python_version }}`. Notez toutefois que la présentation des résultats ne sera pas la même.
+Il est possible d'utiliser la variable `{{ ansible_facts.python.version }}` en lieu et place de `{{ ansible_python_version }}`.  
+Notez toutefois que la présentation des résultats ne sera pas la même.
 
 Exécutons notre nouveau livre.
 
