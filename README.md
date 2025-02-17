@@ -9,3 +9,4 @@
 - [Handler](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier12.md)
 - [Variables](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier14.md)
 - [Variables enregistrées](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier15.md)
+- [Facts et variables implicites](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier16.md)
