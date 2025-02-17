@@ -291,7 +291,7 @@ nano chrony-02.yml
 ...
 ```
 
-Nous devons ensuite créer le répertoire `vars` dans le dossier `playbooks` et y définir les fichiers de variables, un pour chaque distribution.
+Nous devons ensuite créer le répertoire `vars` dans le dossier `playbooks` et y définir les fichiers de variables externes, un pour chaque distribution.
 
 ```sh
 mkdir vars
