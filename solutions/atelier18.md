@@ -22,7 +22,7 @@ Rendons-nous dans le répertoire *playbooks* du projet.
 cd ansible/projets/ema/playbooks/
 ```
 
-Nous allons créer un nouveau *playbook* `chrony.yml` qui déploiera un fichier de configuration personnalisé sur nos cibles. Pour cela, reprenons le travail effectué lors du dernier atelier et apportons les modifications nécessaires à la structure de l'ancien *playbook*. Voir [atelier17](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier17.md).
+Nous allons créer un nouveau *playbook* `chrony.yml` qui déploiera un fichier de configuration personnalisé sur nos cibles. Pour cela, reprenons le travail effectué lors du [dernier atelier](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier17.md) et apportons les modifications nécessaires à la structure de l'ancien *playbook*.
 
 ```sh
 nano chrony.yml
@@ -97,7 +97,7 @@ rtcsync
 logdir /var/log/chrony
 ```
 
-La variable `{{chrony_confdir}}` contient le chemin du fichier de configuration de `chrony`. Cette variable est définie pour chaque distribution.
+La variable `{{chrony_confdir}}` contient le chemin d'accès vers le fichier de configuration du service. Cette variable est définie spécifiquement pour chaque distribution.
 
 Nous pouvons à présent tester notre *playbook*.
 
@@ -159,7 +159,7 @@ suse                       : ok=6    changed=4    unreachable=0    failed=0    s
 ubuntu                     : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Connectons-nous sur l'hôte `suse` pour vérifier le bon fonctionnement de notre configuration.
+Connectons-nous à l'hôte `suse` pour vérifier le bon fonctionnement de notre configuration.
 
 ```sh
 ssh suse
@@ -199,7 +199,7 @@ dalaran.sceen.net          17   8   913    +10.183     11.558  -2351us  3534us
 
 Tout semble fonctionner correctement. Nous retrouvons bien nos quatre serveurs de temps.
 
-Nous avons à présent terminé tous les ateliers 🚀
+Tous les ateliers sont désormais terminés 🚀  
 Faisons un peu de nettoyage.
 
 ```sh
