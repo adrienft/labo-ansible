@@ -97,7 +97,7 @@ rtcsync
 logdir /var/log/chrony
 ```
 
-La variable `{{chrony_confdir}}` contient le chemin d'accès vers le fichier de configuration du service. Cette variable est définie spécifiquement pour chaque distribution.
+La variable `{{chrony_confdir}}` contient le chemin vers le fichier de configuration du service. Cette variable est définie spécifiquement pour chaque distribution.
 
 Nous pouvons à présent tester notre *playbook*.
 
@@ -181,7 +181,7 @@ rtcsync
 logdir /var/log/chrony
 ```
 
-Vérifions la bonne prise en compte de notre configuration par `chrony`...
+Vérifions la bonne prise en compte de notre configuration par `chrony`.
 
 ```sh
 chronyc sourcestats
@@ -199,8 +199,7 @@ dalaran.sceen.net          17   8   913    +10.183     11.558  -2351us  3534us
 
 Tout semble fonctionner correctement. Nous retrouvons bien nos quatre serveurs de temps.
 
-Tous les ateliers sont désormais terminés 🚀  
-Faisons un peu de nettoyage.
+Tous les ateliers sont désormais terminés 🚀
 
 ```sh
 exit
