@@ -11,3 +11,4 @@
 - [Variables enregistrées](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier15.md)
 - [Facts et variables implicites](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier16.md)
 - [Cibles hétérogènes](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier17.md)
+- [Jinja & Templates](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier18.md)
