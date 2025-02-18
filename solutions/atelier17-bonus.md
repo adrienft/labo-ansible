@@ -4,7 +4,8 @@
 
 ### Une autre alternative est possible...
 
-Nous allons réécrire le *playbook* `chrony-02.yml` de [l'atelier précédent](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier17.md) en intégrant directement les variables au sein du *playbook*. Cette intégration se matérialise par l'utilisation d'une structure `vars`. Cette solution me semble plus simple et intuitive que celle consistant à utiliser des fichier de variables externes.
+Nous allons réécrire le *playbook* `chrony-02.yml` de [l'atelier précédent](https://github.com/adrienft/labo-ansible/blob/main/solutions/atelier17.md) en y intégrant directement les variables pour chaque distribution. Cette intégration se matérialise par l'utilisation d'une structure `vars`. Nous n'avons alors plus besoin de fichiers externes...  
+Une telle solution me semble plus simple et intuitive que celle consistant à utiliser des fichiers de variables externes.
 
 ```sh
 nano chrony-02.yml
@@ -83,6 +84,8 @@ nano chrony-02.yml
 
 ...
 ```
+
+La fonction `replace(' ', '_')]` est nécéssaire à la gestion de l'espace dans le nom de la distribution `openSUSE Leap`.
 
 Nous pouvons à présent tester notre livre d'instructions.
 
