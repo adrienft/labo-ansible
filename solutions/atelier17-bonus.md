@@ -84,7 +84,7 @@ nano chrony-02.yml
 ...
 ```
 
-La fonction `replace(' ', '_')]` est nécéssaire à la gestion de l'espace dans le nom de la distribution `openSUSE Leap`.
+La fonction `replace(' ', '_')]` est utilisée pour gérer l'espace dans le nom de la distribution `openSUSE Leap`.
 
 Nous pouvons à présent tester notre livre d'instructions.
 
