@@ -89,7 +89,7 @@ nano chrony-01.yml
 
     - name: Configure chrony servers on Debian/Ubuntu
       copy:
-        dest: /etc/chrony.conf
+        dest: /etc/chrony/chrony.conf
         content: |
           server 0.fr.pool.ntp.org iburst
           server 1.fr.pool.ntp.org iburst
@@ -305,7 +305,7 @@ nano vars/chrony_debian.yml
 
 chrony_package: chrony
 chrony_service: chronyd
-chrony_confdir: /etc/chrony.conf
+chrony_confdir: /etc/chrony/chrony.conf
 
 ...
 ```
@@ -321,7 +321,7 @@ nano vars/chrony_ubuntu.yml
 
 chrony_package: chrony
 chrony_service: chronyd
-chrony_confdir: /etc/chrony.conf
+chrony_confdir: /etc/chrony/chrony.conf
 
 ...
 ```

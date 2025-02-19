@@ -24,16 +24,16 @@ nano chrony-02.yml
       Debian:
         package: chrony
         service: chronyd
-        confdir: /etc/chrony.conf
+        confdir: /etc/chrony/chrony.conf
       Ubuntu:
         package: chrony
         service: chronyd
-        confdir: /etc/chrony.conf
+        confdir: /etc/chrony/chrony.conf
       Rocky:
         package: chrony
         service: chronyd
         confdir: /etc/chrony.conf
-      openSUSE_Leap:
+      openSUSE Leap:
         package: chrony
         service: chronyd
         confdir: /etc/chrony.conf
@@ -48,21 +48,21 @@ nano chrony-02.yml
 
     - name: Display the chrony configuration for the distribution
       debug:
-        msg: "{{ chrony[ansible_distribution | replace(' ', '_')] }}"
+        msg: "{{ chrony[ansible_distribution] }}"
 
     - name: Install chrony
       package:
-        name: "{{ chrony[ansible_distribution | replace(' ', '_')].package }}"
+        name: "{{ chrony[ansible_distribution].package }}"
 
     - name: Start & enable chronyd
       service:
-        name: "{{ chrony[ansible_distribution | replace(' ', '_')].service }}"
+        name: "{{ chrony[ansible_distribution].service }}"
         state: started
         enabled: true
 
     - name: Configure chrony servers and options
       copy:
-        dest: "{{ chrony[ansible_distribution | replace(' ', '_')].confdir }}"
+        dest: "{{ chrony[ansible_distribution].confdir }}"
         content: |
           server 0.fr.pool.ntp.org iburst
           server 1.fr.pool.ntp.org iburst
@@ -78,13 +78,11 @@ nano chrony-02.yml
 
     - name: Restart chronyd
       service:
-        name: "{{ chrony[ansible_distribution | replace(' ', '_')].service }}"
+        name: "{{ chrony[ansible_distribution].service }}"
         state: restarted
 
 ...
 ```
-
-La fonction `replace(' ', '_')]` est utilisée pour gérer l'espace dans le nom de la distribution `openSUSE Leap`.
 
 Nous pouvons à présent tester notre livre d'instructions.
 
@@ -119,7 +117,7 @@ ok: [rocky] => {
 }
 ok: [debian] => {
     "msg": {
-        "confdir": "/etc/chrony.conf",
+        "confdir": "/etc/chrony/chrony.conf",
         "package": "chrony",
         "service": "chronyd"
     }
@@ -133,7 +131,7 @@ ok: [suse] => {
 }
 ok: [ubuntu] => {
     "msg": {
-        "confdir": "/etc/chrony.conf",
+        "confdir": "/etc/chrony/chrony.conf",
         "package": "chrony",
         "service": "chronyd"
     }
